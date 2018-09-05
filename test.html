@@ -75,13 +75,8 @@
             let hrsFrom = document.querySelectorAll('.hrs_from')
             let hrsTo = document.querySelectorAll('.hrs_to')
 
-            hrsFrom.forEach(function(hrFrom) {
-                hrFrom.insertAdjacentHTML('beforeend', options)
-            })
-
-            hrsTo.forEach(function(hrTo) {
-                hrTo.insertAdjacentHTML('beforeend', options)
-            })
+            hrsFrom.forEach(hrFrom => hrFrom.insertAdjacentHTML('beforeend', options))
+            hrsTo.forEach(hrTo => hrTo.insertAdjacentHTML('beforeend', options))
         }
 
         onSubmit = () => document.querySelect('form').submit()
