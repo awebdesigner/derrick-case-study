@@ -7,88 +7,85 @@
     <title>On Xampp</title>
 </head>
 <body>
-<form method="post" action="get_form_values.php">
-    <div>
-        <select name="days[]">
-            <option value="-">-Select Day</option>
-            <option value="Mon">Monday</option>
-            <option value="Tue">Tuesday</option>
-            <option value="Wed">Wednesday</option>
-            <option value="Thur">Thursday</option>
-            <option value="Fri">Friday</option>
-            <option value="Sat">Saturday</option>
-            <option value="Sun">Sunday</option>
-        </select>
-        <select class="hrs_from" name="hrs_from[]">
-            <option value="-">-From-</option>
-        </select>
-        <select class="hrs_to" name="hrs_to[]">
-            <option value="-">-To-</option>
-        </select>
-    </div>
-    <div>
-        <select name="days[]">
-            <option value="-">-Select Day</option>
-            <option value="1">Monday</option>
-            <option value="2">Tuesday</option>
-            <option value="3">Wednesday</option>
-            <option value="4">Thursday</option>
-            <option value="5">Friday</option>
-            <option value="6">Saturday</option>
-            <option value="7">Sunday</option>
-        </select>
-        <select class="hrs_from" name="hrs_from[]">
-            <option value="-">-From-</option>
-        </select>
-        <select class="hrs_to" name="hrs_to[]">
-            <option value="-">-To-</option>
-        </select>
-    </div>
-    <div>
-        <select name="days[]">
-            <option value="-">-Select Day</option>
-            <option value="1">Monday</option>
-            <option value="2">Tuesday</option>
-            <option value="3">Wednesday</option>
-            <option value="4">Thursday</option>
-            <option value="5">Friday</option>
-            <option value="6">Saturday</option>
-            <option value="7">Sunday</option>
-        </select>
-        <select class="hrs_from" name="hrs_from[]">
-            <option value="-">-From-</option>
-        </select>
-        <select class="hrs_to" name="hrs_to[]">
-            <option value="-">-To-</option>
-        </select>
-    </div>
-    <button id="onSubmit()">Submit</button>
+    <form method="post" action="get_form_values.php">
+        <div>
+            <select name="days[]">
+                <option value="-">-Select Day</option>
+                <option value="Mon">Monday</option>
+                <option value="Tue">Tuesday</option>
+                <option value="Wed">Wednesday</option>
+                <option value="Thur">Thursday</option>
+                <option value="Fri">Friday</option>
+                <option value="Sat">Saturday</option>
+                <option value="Sun">Sunday</option>
+            </select>
+            <select class="hrs_from" name="hrs_from[]">
+                <option value="-">-From-</option>
+            </select>
+            <select class="hrs_to" name="hrs_to[]">
+                <option value="-">-To-</option>
+            </select>
+        </div>
+        <div>
+            <select name="days[]">
+                <option value="-">-Select Day</option>
+                <option value="1">Monday</option>
+                <option value="2">Tuesday</option>
+                <option value="3">Wednesday</option>
+                <option value="4">Thursday</option>
+                <option value="5">Friday</option>
+                <option value="6">Saturday</option>
+                <option value="7">Sunday</option>
+            </select>
+            <select class="hrs_from" name="hrs_from[]">
+                <option value="-">-From-</option>
+            </select>
+            <select class="hrs_to" name="hrs_to[]">
+                <option value="-">-To-</option>
+            </select>
+        </div>
+        <div>
+            <select name="days[]">
+                <option value="-">-Select Day</option>
+                <option value="1">Monday</option>
+                <option value="2">Tuesday</option>
+                <option value="3">Wednesday</option>
+                <option value="4">Thursday</option>
+                <option value="5">Friday</option>
+                <option value="6">Saturday</option>
+                <option value="7">Sunday</option>
+            </select>
+            <select class="hrs_from" name="hrs_from[]">
+                <option value="-">-From-</option>
+            </select>
+            <select class="hrs_to" name="hrs_to[]">
+                <option value="-">-To-</option>
+            </select>
+        </div>
+        <button id="onSubmit()">Submit</button>
 
-</form>
+    </form>
 
-<script>
-    let options = []
+    <script>
+        let options = []
 
-    for (i = 0; i < 24; i++)
-        options.push(`<option value="${i}00">${i<10 ? `0${i}`:`${i}`}:00</option>`)
+        for (i = 0; i < 24; i++) options.push(`<option value="${i}00">${i<10 ? `0${i}`:`${i}`}:00</option>`)
 
-    if (options.length > 0) {
-        let hrsFrom = document.querySelectorAll('.hrs_from')
-        let hrsTo = document.querySelectorAll('.hrs_to')
+        if (options.length > 0) {
+            let hrsFrom = document.querySelectorAll('.hrs_from')
+            let hrsTo = document.querySelectorAll('.hrs_to')
 
-        hrsFrom.forEach(function(hrFrom) {
-            hrFrom.insertAdjacentHTML('beforeend', options)
-        })
+            hrsFrom.forEach(function(hrFrom) {
+                hrFrom.insertAdjacentHTML('beforeend', options)
+            })
 
-        hrsTo.forEach(function(hrTo) {
-            hrTo.insertAdjacentHTML('beforeend', options)
-        })
-    }
+            hrsTo.forEach(function(hrTo) {
+                hrTo.insertAdjacentHTML('beforeend', options)
+            })
+        }
 
-    onSubmit = () => {
-        document.querySelect('form').submit()
-    }
+        onSubmit = () => document.querySelect('form').submit()
 
-</script>
+    </script>
 </body>
 </html>
